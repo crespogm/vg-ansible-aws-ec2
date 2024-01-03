@@ -1,0 +1,499 @@
+{
+ "changed": true,
+        "changed_ids": [
+            "i-0539acefebbf6a90a"
+        ],
+        "failed": false,
+        "instance_ids": [
+            "i-0ecbaa86130dc67c9",
+            "i-0bfaeae1685071d69",
+            "i-0539acefebbf6a90a"
+        ],
+        "instances": [
+            {
+                "ami_launch_index": 0,
+                "architecture": "x86_64",
+                "block_device_mappings": [
+                    {
+                        "device_name": "/dev/sda1",
+                        "ebs": {
+                            "attach_time": "2024-01-02T23:59:43+00:00",
+                            "delete_on_termination": true,
+                            "status": "attached",
+                            "volume_id": "vol-0bc7fae228083e6d2"
+                        }
+                    },
+                    {
+                        "device_name": "/dev/xvda",
+                        "ebs": {
+                            "attach_time": "2024-01-02T23:59:43+00:00",
+                            "delete_on_termination": true,
+                            "status": "attached",
+                            "volume_id": "vol-059642275f8d8aa6b"
+                        }
+                    }
+                ],
+                "capacity_reservation_specification": {
+                    "capacity_reservation_preference": "open"
+                },
+                "client_token": "6d91f1132964492cbdd8e6fbe346c4d2",
+                "cpu_options": {
+                    "core_count": 1,
+                    "threads_per_core": 2
+                },
+                "current_instance_boot_mode": "legacy-bios",
+                "ebs_optimized": false,
+                "ena_support": true,
+                "enclave_options": {
+                    "enabled": false
+                },
+                "hibernation_options": {
+                    "configured": false
+                },
+                "hypervisor": "xen",
+                "image_id": "ami-08e2c1a8d17c2fe17",
+                "instance_id": "i-0ecbaa86130dc67c9",
+                "instance_type": "t3.micro",
+                "key_name": "crespog-ssh",
+                "launch_time": "2024-01-02T23:59:42+00:00",
+                "maintenance_options": {
+                    "auto_recovery": "default"
+                },
+                "metadata_options": {
+                    "http_endpoint": "enabled",
+                    "http_protocol_ipv6": "disabled",
+                    "http_put_response_hop_limit": 1,
+                    "http_tokens": "optional",
+                    "instance_metadata_tags": "disabled",
+                    "state": "applied"
+                },
+                "monitoring": {
+                    "state": "disabled"
+                },
+                "network_interfaces": [
+                    {
+                        "association": {
+                            "ip_owner_id": "amazon",
+                            "public_dns_name": "ec2-35-87-204-227.us-west-2.compute.amazonaws.com",
+                            "public_ip": "35.87.204.227"
+                        },
+                        "attachment": {
+                            "attach_time": "2024-01-02T23:59:42+00:00",
+                            "attachment_id": "eni-attach-03c71996a2f21eeea",
+                            "delete_on_termination": true,
+                            "device_index": 0,
+                            "network_card_index": 0,
+                            "status": "attached"
+                        },
+                        "description": "",
+                        "groups": [
+                            {
+                                "group_id": "sg-0cef773f1fa4d0b45",
+                                "group_name": "crespog_sg_first"
+                            }
+                        ],
+                        "interface_type": "interface",
+                        "ipv6_addresses": [],
+                        "mac_address": "0e:5d:69:68:bf:27",
+                        "network_interface_id": "eni-02f12c950490c0922",
+                        "owner_id": "807623857507",
+                        "private_dns_name": "ip-10-1-64-222.us-west-2.compute.internal",
+                        "private_ip_address": "10.1.64.222",
+                        "private_ip_addresses": [
+                            {
+                                "association": {
+                                    "ip_owner_id": "amazon",
+                                    "public_dns_name": "ec2-35-87-204-227.us-west-2.compute.amazonaws.com",
+                                    "public_ip": "35.87.204.227"
+                                },
+                                "primary": true,
+                                "private_dns_name": "ip-10-1-64-222.us-west-2.compute.internal",
+                                "private_ip_address": "10.1.64.222"
+                            }
+                        ],
+                        "source_dest_check": true,
+                        "status": "in-use",
+                        "subnet_id": "subnet-0d23b636e69719d3f",
+                        "vpc_id": "vpc-0edaf99d176086251"
+                    }
+                ],
+                "placement": {
+                    "availability_zone": "us-west-2d",
+                    "group_name": "",
+                    "tenancy": "default"
+                },
+                "platform_details": "Linux/UNIX",
+                "private_dns_name": "ip-10-1-64-222.us-west-2.compute.internal",
+                "private_dns_name_options": {
+                    "enable_resource_name_dns_a_record": false,
+                    "enable_resource_name_dns_aaaa_record": false,
+                    "hostname_type": "ip-name"
+                },
+                "private_ip_address": "10.1.64.222",
+                "product_codes": [],
+                "public_dns_name": "ec2-35-87-204-227.us-west-2.compute.amazonaws.com",
+                "public_ip_address": "35.87.204.227",
+                "root_device_name": "/dev/sda1",
+                "root_device_type": "ebs",
+                "security_groups": [
+                    {
+                        "group_id": "sg-0cef773f1fa4d0b45",
+                        "group_name": "crespog_sg_first"
+                    }
+                ],
+                "source_dest_check": true,
+                "state": {
+                    "code": 16,
+                    "name": "running"
+                },
+                "state_transition_reason": "",
+                "subnet_id": "subnet-0d23b636e69719d3f",
+                "tags": {
+                    "Name": "crespog_first"
+                },
+                "usage_operation": "RunInstances",
+                "usage_operation_update_time": "2024-01-02T23:59:42+00:00",
+                "virtualization_type": "hvm",
+                "vpc_id": "vpc-0edaf99d176086251"
+            },
+            {
+                "ami_launch_index": 0,
+                "architecture": "x86_64",
+                "block_device_mappings": [
+                    {
+                        "device_name": "/dev/sda1",
+                        "ebs": {
+                            "attach_time": "2024-01-03T00:03:55+00:00",
+                            "delete_on_termination": true,
+                            "status": "attached",
+                            "volume_id": "vol-0611f3318530fe001"
+                        }
+                    },
+                    {
+                        "device_name": "/dev/xvda",
+                        "ebs": {
+                            "attach_time": "2024-01-03T00:03:55+00:00",
+                            "delete_on_termination": true,
+                            "status": "attached",
+                            "volume_id": "vol-0727add943f952379"
+                        }
+                    }
+                ],
+                "capacity_reservation_specification": {
+                    "capacity_reservation_preference": "open"
+                },
+                "client_token": "050d6a5ebf55479791376bd928ffa965",
+                "cpu_options": {
+                    "core_count": 1,
+                    "threads_per_core": 2
+                },
+                "current_instance_boot_mode": "legacy-bios",
+                "ebs_optimized": false,
+                "ena_support": true,
+                "enclave_options": {
+                    "enabled": false
+                },
+                "hibernation_options": {
+                    "configured": false
+                },
+                "hypervisor": "xen",
+                "image_id": "ami-08e2c1a8d17c2fe17",
+                "instance_id": "i-0bfaeae1685071d69",
+                "instance_type": "t3.micro",
+                "key_name": "crespog-ssh",
+                "launch_time": "2024-01-03T00:03:54+00:00",
+                "maintenance_options": {
+                    "auto_recovery": "default"
+                },
+                "metadata_options": {
+                    "http_endpoint": "enabled",
+                    "http_protocol_ipv6": "disabled",
+                    "http_put_response_hop_limit": 1,
+                    "http_tokens": "optional",
+                    "instance_metadata_tags": "disabled",
+                    "state": "applied"
+                },
+                "monitoring": {
+                    "state": "disabled"
+                },
+                "network_interfaces": [
+                    {
+                        "association": {
+                            "ip_owner_id": "amazon",
+                            "public_dns_name": "ec2-34-222-206-15.us-west-2.compute.amazonaws.com",
+                            "public_ip": "34.222.206.15"
+                        },
+                        "attachment": {
+                            "attach_time": "2024-01-03T00:03:54+00:00",
+                            "attachment_id": "eni-attach-05c93169d4ede99d7",
+                            "delete_on_termination": true,
+                            "device_index": 0,
+                            "network_card_index": 0,
+                            "status": "attached"
+                        },
+                        "description": "",
+                        "groups": [
+                            {
+                                "group_id": "sg-0cef773f1fa4d0b45",
+                                "group_name": "crespog_sg_first"
+                            }
+                        ],
+                        "interface_type": "interface",
+                        "ipv6_addresses": [],
+                        "mac_address": "0e:5d:59:f7:1d:63",
+                        "network_interface_id": "eni-022e8ff5e4affd59c",
+                        "owner_id": "807623857507",
+                        "private_dns_name": "ip-10-1-69-169.us-west-2.compute.internal",
+                        "private_ip_address": "10.1.69.169",
+                        "private_ip_addresses": [
+                            {
+                                "association": {
+                                    "ip_owner_id": "amazon",
+                                    "public_dns_name": "ec2-34-222-206-15.us-west-2.compute.amazonaws.com",
+                                    "public_ip": "34.222.206.15"
+                                },
+                                "primary": true,
+                                "private_dns_name": "ip-10-1-69-169.us-west-2.compute.internal",
+                                "private_ip_address": "10.1.69.169"
+                            }
+                        ],
+                        "source_dest_check": true,
+                        "status": "in-use",
+                        "subnet_id": "subnet-0d23b636e69719d3f",
+                        "vpc_id": "vpc-0edaf99d176086251"
+                    }
+                ],
+                "placement": {
+                    "availability_zone": "us-west-2d",
+                    "group_name": "",
+                    "tenancy": "default"
+                },
+                "platform_details": "Linux/UNIX",
+                "private_dns_name": "ip-10-1-69-169.us-west-2.compute.internal",
+                "private_dns_name_options": {
+                    "enable_resource_name_dns_a_record": false,
+                    "enable_resource_name_dns_aaaa_record": false,
+                    "hostname_type": "ip-name"
+                },
+                "private_ip_address": "10.1.69.169",
+                "product_codes": [],
+                "public_dns_name": "ec2-34-222-206-15.us-west-2.compute.amazonaws.com",
+                "public_ip_address": "34.222.206.15",
+                "root_device_name": "/dev/sda1",
+                "root_device_type": "ebs",
+                "security_groups": [
+                    {
+                        "group_id": "sg-0cef773f1fa4d0b45",
+                        "group_name": "crespog_sg_first"
+                    }
+                ],
+                "source_dest_check": true,
+                "state": {
+                    "code": 16,
+                    "name": "running"
+                },
+                "state_transition_reason": "",
+                "subnet_id": "subnet-0d23b636e69719d3f",
+                "tags": {
+                    "Name": "crespog_first"
+                },
+                "usage_operation": "RunInstances",
+                "usage_operation_update_time": "2024-01-03T00:03:54+00:00",
+                "virtualization_type": "hvm",
+                "vpc_id": "vpc-0edaf99d176086251"
+            },
+            {
+                "ami_launch_index": 0,
+                "architecture": "x86_64",
+                "block_device_mappings": [
+                    {
+                        "device_name": "/dev/sda1",
+                        "ebs": {
+                            "attach_time": "2024-01-03T00:06:19+00:00",
+                            "delete_on_termination": true,
+                            "status": "attaching",
+                            "volume_id": "vol-054d122f025a506bb"
+                        }
+                    },
+                    {
+                        "device_name": "/dev/xvda",
+                        "ebs": {
+                            "attach_time": "2024-01-03T00:06:19+00:00",
+                            "delete_on_termination": true,
+                            "status": "attaching",
+                            "volume_id": "vol-033f28ec433060ee0"
+                        }
+                    }
+                ],
+                "capacity_reservation_specification": {
+                    "capacity_reservation_preference": "open"
+                },
+                "client_token": "0135b78a5a8c4a028610c3bc4e752a44",
+                "cpu_options": {
+                    "core_count": 1,
+                    "threads_per_core": 2
+                },
+                "current_instance_boot_mode": "legacy-bios",
+                "ebs_optimized": false,
+                "ena_support": true,
+                "enclave_options": {
+                    "enabled": false
+                },
+                "hibernation_options": {
+                    "configured": false
+                },
+                "hypervisor": "xen",
+                "image_id": "ami-08e2c1a8d17c2fe17",
+                "instance_id": "i-0539acefebbf6a90a",
+                "instance_type": "t3.micro",
+                "key_name": "crespog-ssh",
+                "launch_time": "2024-01-03T00:06:18+00:00",
+                "maintenance_options": {
+                    "auto_recovery": "default"
+                },
+                "metadata_options": {
+                    "http_endpoint": "enabled",
+                    "http_protocol_ipv6": "disabled",
+                    "http_put_response_hop_limit": 1,
+                    "http_tokens": "optional",
+                    "instance_metadata_tags": "disabled",
+                    "state": "pending"
+                },
+                "monitoring": {
+                    "state": "disabled"
+                },
+                "network_interfaces": [
+                    {
+                        "association": {
+                            "ip_owner_id": "amazon",
+                            "public_dns_name": "ec2-44-226-198-117.us-west-2.compute.amazonaws.com",
+                            "public_ip": "44.226.198.117"
+                        },
+                        "attachment": {
+                            "attach_time": "2024-01-03T00:06:18+00:00",
+                            "attachment_id": "eni-attach-0d28289f4fe84f668",
+                            "delete_on_termination": true,
+                            "device_index": 0,
+                            "network_card_index": 0,
+                            "status": "attaching"
+                        },
+                        "description": "",
+                        "groups": [
+                            {
+                                "group_id": "sg-0cef773f1fa4d0b45",
+                                "group_name": "crespog_sg_first"
+                            }
+                        ],
+                        "interface_type": "interface",
+                        "ipv6_addresses": [],
+                        "mac_address": "0e:b3:7e:f1:ba:83",
+                        "network_interface_id": "eni-0201ce1bbec7ccd30",
+                        "owner_id": "807623857507",
+                        "private_dns_name": "ip-10-1-79-119.us-west-2.compute.internal",
+                        "private_ip_address": "10.1.79.119",
+                        "private_ip_addresses": [
+                            {
+                                "association": {
+                                    "ip_owner_id": "amazon",
+                                    "public_dns_name": "ec2-44-226-198-117.us-west-2.compute.amazonaws.com",
+                                    "public_ip": "44.226.198.117"
+                                },
+                                "primary": true,
+                                "private_dns_name": "ip-10-1-79-119.us-west-2.compute.internal",
+                                "private_ip_address": "10.1.79.119"
+                            }
+                        ],
+                        "source_dest_check": true,
+                        "status": "in-use",
+                        "subnet_id": "subnet-0d23b636e69719d3f",
+                        "vpc_id": "vpc-0edaf99d176086251"
+                    }
+                ],
+                "placement": {
+                    "availability_zone": "us-west-2d",
+                    "group_name": "",
+                    "tenancy": "default"
+                },
+                "platform_details": "Linux/UNIX",
+                "private_dns_name": "ip-10-1-79-119.us-west-2.compute.internal",
+                "private_dns_name_options": {
+                    "enable_resource_name_dns_a_record": false,
+                    "enable_resource_name_dns_aaaa_record": false,
+                    "hostname_type": "ip-name"
+                },
+                "private_ip_address": "10.1.79.119",
+                "product_codes": [],
+                "public_dns_name": "ec2-44-226-198-117.us-west-2.compute.amazonaws.com",
+                "public_ip_address": "44.226.198.117",
+                "root_device_name": "/dev/sda1",
+                "root_device_type": "ebs",
+                "security_groups": [
+                    {
+                        "group_id": "sg-0cef773f1fa4d0b45",
+                        "group_name": "crespog_sg_first"
+                    }
+                ],
+                "source_dest_check": true,
+                "state": {
+                    "code": 0,
+                    "name": "pending"
+                },
+                "state_transition_reason": "",
+                "subnet_id": "subnet-0d23b636e69719d3f",
+                "tags": {
+                    "Name": "crespog_first"
+                },
+                "usage_operation": "RunInstances",
+                "usage_operation_update_time": "2024-01-03T00:06:18+00:00",
+                "virtualization_type": "hvm",
+                "vpc_id": "vpc-0edaf99d176086251"
+            }
+        ],
+        "spec": {
+            "BlockDeviceMappings": [
+                {
+                    "DeviceName": "/dev/xvda",
+                    "Ebs": {
+                        "DeleteOnTermination": true,
+                        "VolumeSize": 8
+                    }
+                }
+            ],
+            "ClientToken": "0135b78a5a8c4a028610c3bc4e752a44",
+            "ImageId": "ami-08e2c1a8d17c2fe17",
+            "InstanceType": "t3.micro",
+            "KeyName": "crespog-ssh",
+            "MaxCount": 1,
+            "MinCount": 1,
+            "NetworkInterfaces": [
+                {
+                    "AssociatePublicIpAddress": true,
+                    "DeviceIndex": 0,
+                    "Groups": [
+                        "sg-0cef773f1fa4d0b45"
+                    ],
+                    "SubnetId": "subnet-0d23b636e69719d3f"
+                }
+            ],
+            "TagSpecifications": [
+                {
+                    "ResourceType": "volume",
+                    "Tags": [
+                        {
+                            "Key": "Name",
+                            "Value": "crespog_first"
+                        }
+                    ]
+                },
+                {
+                    "ResourceType": "instance",
+                    "Tags": [
+                        {
+                            "Key": "Name",
+                            "Value": "crespog_first"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
