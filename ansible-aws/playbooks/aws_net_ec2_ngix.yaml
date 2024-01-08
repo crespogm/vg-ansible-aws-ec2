@@ -1,0 +1,91 @@
+---
+# Usage: ansible-playbook playbooks/0_vpc-create.yml -i inventory
+
+- name: >
+    Create the VPC network.
+    While you can run this multiple times, it won't apply any changes; you need to delete and recreate the VPC.
+  hosts: aws
+  gather_facts: no
+  connection: local
+  tasks:
+    - name: Create VPC
+      amazon.aws.ec2_vpc_net:
+        name: "{{ myname }}_vpc"
+        state: present
+        region: "{{ aws_region }}"
+        cidr_block: "{{ vpc_block }}.0.0/16" #Biggest possible AWS network is /16
+        tags: '{"Name":"{{ myname }}_vpc", "Environment":"{{ myname }}"}'
+      register: vpc   
+    - name: Create subnet
+      amazon.aws.ec2_vpc_subnet:   
+        state: present
+        vpc_id: "{{ vpc.vpc.id }}"
+        cidr: "{{ vpc_block }}.64.0/20"
+        region: "{{ aws_region }}"
+        map_public: true
+        tags: '{"Name":"{{ myname }}_subnet_public_b","Subnet":"subnet_public_b", "Environment":"{{ myname }}"}'
+      register: az1_public
+    - name: Create Internet gateway
+      amazon.aws.ec2_vpc_igw:
+        vpc_id: "{{ vpc.vpc.id }}"
+        state: present
+        region: "{{ aws_region }}"
+        tags: '{"Name":"{{ myname }}_vpc", "Environment":"{{ myname }}"}'
+      register: igw
+    - name: Set up public subnet route table
+      amazon.aws.ec2_vpc_route_table:
+        vpc_id: "{{ vpc.vpc.id }}"
+        region: "{{ aws_region }}"
+        tags: '{"Name":"{{ myname }}_public_rt", "Environment":"{{ myname }}"}'
+        subnets:
+          - "{{ az1_public.subnet.id }}"
+        routes:
+          - dest: 0.0.0.0/0
+            gateway_id: "{{ igw.gateway_id }}"
+          - dest: ::/0
+            gateway_id: "{{ igw.gateway_id }}"
+      register: public_route_table
+    - name: Create security group
+      amazon.aws.ec2_security_group:
+        name: "{{ myname }}_sg_first"
+        description: "{{ myname }} first hosts"
+        vpc_id: "{{ vpc.vpc.id }}"
+        rules:
+          - proto: tcp
+            ports:
+            - 80
+            cidr_ip: 0.0.0.0/0
+            rule_desc: allow all on port 80
+          - proto: tcp
+            ports:
+            - 443
+            cidr_ip: 0.0.0.0/0
+            rule_desc: allow all on port 443
+          - proto: tcp
+            ports:
+            - 22
+            cidr_ip: 0.0.0.0/0
+            rule_desc: allow all on port ssh/22
+        region: "{{ aws_region }}"
+    - name: create key pair using key_material obtained using 'file' lookup plugin
+      amazon.aws.ec2_key:
+        name: "{{ myname }}-ssh"
+        region: "{{ aws_region }}"
+        key_material: "{{ lookup('file', '~/.ssh/id_rsa.pub') }}"
+    - name: Create the first instance in az0
+      include_role:
+        name: ec2-instance        
+      vars:
+        instance_type: t3.micro
+        instance_name: "{{ myname }}_first"
+        vpc_subnet_id: "{{ az1_public.subnet.id }}"
+        security_group: "{{ myname }}_sg_first"
+        ami: ami-08e2c1a8d17c2fe17
+- hosts: first
+  name: configuration play
+  user: ubuntu
+  become: yes
+  gather_facts: true
+
+  roles:
+     - { role: base }

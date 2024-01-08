@@ -1,0 +1,47 @@
+---
+- name: Instance provisioning 
+  amazon.aws.ec2_instance:
+    name: "{{ instance_name }}"
+    region: "{{ aws_region }}"
+    key_name: "{{ myname }}-ssh"
+    instance_type: "{{instance_type}}"
+    image_id: "{{ami}}"
+    security_group: "{{ security_group }}"
+    vpc_subnet_id: "{{ vpc_subnet_id }}"
+    count: 1
+    wait: yes
+    volumes:
+      - device_name: /dev/xvda
+        ebs:
+          volume_size: 8
+          delete_on_termination: true
+    network:
+      assign_public_ip: yes    
+    #tags: '{"Name":"{{ myname }_ec2", "Environment":"{{ myname }}"}'
+  register: ec2_result
+- name: Debug instance result (optional)
+  debug:
+    var: ec2_result  
+- name: Wait for instance to be started
+  block:
+    - name: Check instance state
+      ec2_instance_info:
+        region: "{{ aws_region }}"
+        filters:
+          instance-id: "{{ ec2_result.instance_ids | last }}"  # Use 'changed_ids'
+      register: ec2_instance_info
+    - name: Debug instance state (optional)
+      debug:
+        var: ec2_instance_info
+      retries: 30
+      delay: 10
+      until: ec2_instance_info.instances[0].state.name == 'running'
+- name: Wait for instance to become running
+  wait_for:
+    timeout: 300  # Wait up to 5 minutes
+    state: started
+    host: "{{ ec2_instance_info.instances[0].public_dns_name }}"
+- name: Add all instance public IPs to host group
+  ansible.builtin.add_host:
+    hostname: '{{ ec2_instance_info.instances[0].public_dns_name }}'
+    groups: first
