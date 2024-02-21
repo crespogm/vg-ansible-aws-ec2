@@ -20,6 +20,7 @@ Vagrant.configure(2) do |config|
     # Configure the base box
     config.vm.define "ubuntu" do |ubuntu|
         ubuntu.vm.box = "ubuntu/jammy64"
+        ubuntu.vm.box_version = "20231215.0.0"
         ubuntu.vm.synced_folder "ansible-aws/", "/ansible-aws/", type: "rsync"
     end
 

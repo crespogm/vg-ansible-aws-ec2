@@ -56,9 +56,6 @@ Aquí hay algunos ejemplos de cómo puede utilizar el módulo amazon.aws:
 
 El módulo amazon.aws es una herramienta poderosa que puede ayudarlo a automatizar sus tareas de AWS.
 
-**You**: Me agregas algunos ejemploos de almacenamientoo, grupos de seguridadd, Elastic Beanstaalk, Amazon RDS yy S3
-
-**Bard**: **Almacenamiento**
 
 * **Amazon Elastic Block Store (EBS)**: EBS proporciona almacenamiento persistente para instancias de Amazon EC2. EBS se puede utilizar para almacenar datos de aplicaciones, sistemas operativos, archivos de registro, etc.
 * **Amazon Simple Storage Service (S3)**: S3 proporciona almacenamiento de objetos escalable, duradero y económico. S3 se puede utilizar para almacenar archivos de datos, imágenes, videos, etc.
@@ -100,10 +97,6 @@ El módulo amazon.aws es una herramienta poderosa que puede ayudarlo a automatiz
     * Una aplicación móvil que almacena datos de usuarios en un bucket de Amazon S3.
 
 Estos son solo algunos ejemplos de cómo se pueden utilizar estos servicios de AWS. Hay muchas otras posibilidades, dependiendo de las necesidades específicas de su aplicación o entorno.
-
-**You**: me aagregas  el codigo yaml de cada uno de los ejemplos mencionados! gracias!
-
-**Bard**: **Ejemplo de almacenamiento de archivos**
 
 ```yaml
 ---
@@ -200,12 +193,6 @@ Este playbook crearía una instancia de base de datos MySQL llamada `my-rds-inst
 ```
 
 Este playbook crearía un bucket de S3 llamado `my-bucket` en la región `us-east-1`.
-
-Espero que esta información te sea útil.
-
-**You**: me agregaas un ejjemplo de EBS, gracias
-
-**Bard**: **Ejemplo de EBS**
 
 El siguiente playbook crearía un volumen de EBS llamado `my-ebs-volume` de 10 GB de tamaño:
 
