@@ -16,4 +16,4 @@ vpc_block: 10.1 #First two octets of the network
 
 
 # Set your unique name
-myname: crespog_lastone # CHANGE ME
+myname:  # CHANGE ME

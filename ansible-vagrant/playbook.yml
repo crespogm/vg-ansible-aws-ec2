@@ -37,14 +37,14 @@
       dest=/etc/environment
       state=present
       regexp="^export AWS_ACCESS_KEY_ID"
-      line="export AWS_ACCESS_KEY_ID=pegarkey"
+      line="export AWS_ACCESS_KEY_ID=AKIA453Y6VROTTS5AMXC"
     become: true
   - name: Adding the Secret Access Key environment variable
     lineinfile: >
       dest=/etc/environment
       state=present
       regexp="^export AWS_SECRET_ACCESS_KEY"
-      line="export AWS_SECRET_ACCESS_KEY=pegarsecret"
+      line="export AWS_SECRET_ACCESS_KEY=R5niYqoJhUk3xF5dFt37BZ46qfgXqsKXfoo8pFW+"
     become: true
 
   - name: Creating a public SSH key
