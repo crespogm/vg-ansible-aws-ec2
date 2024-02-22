@@ -46,7 +46,7 @@ Recursos en AWS utilizando un VM preconfigurada.
 ```
 vagrant up
 vagrant ssh
-cd ansible-aws
+cd /ansible-aws
 ansible-playbook -i inventory playbooks/aws_net_ec2_ngix.yaml
 ```
 Una vez finalizado el plabook podemos ingresar desde un navegador con la ip publica que nos reservó AWS.
