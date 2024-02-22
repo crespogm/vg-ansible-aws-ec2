@@ -1,4 +1,4 @@
-# Ansible for AWS
+# Laboratorio Ansible con AWS
 **AWS access keys introduccion**
 
 Las claves de acceso son credenciales a largo plazo para un usuario de IAM o el Usuario raíz de la cuenta de AWS. Puede utilizar las claves de acceso para firmar solicitudes mediante programación a la AWS CLI o a la API de AWS (directamente o mediante el SDK de AWS). Para obtener más información, consulte Firma de solicitudes API de AWS.
